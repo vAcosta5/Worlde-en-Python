@@ -1,4 +1,3 @@
-import os
 import random
 
 class wordle:
@@ -14,7 +13,7 @@ class wordle:
 
     def transformar_archivo(self, cant_letras):
         archivo = open(self.archivo, "r", encoding="utf-8")
-        nombre_archivo = os.path.join("Worlde", "EspañolXLetras.txt")
+        nombre_archivo = "EspañolXLetras.txt"
         espaniolxletras = open(nombre_archivo, "w", encoding="utf-8")
         for linea in archivo:
             linea = linea.split()
@@ -92,7 +91,7 @@ class wordle:
         print(f'La palabra era: {PalabraRandom}')
 
 
-wordle = wordle("Worlde/2000 palabras.txt")
+wordle = wordle("2000 palabras.txt")
 wordle.palabra_random(wordle.transformar_archivo(5))
 grid = wordle.HacerGrid(6, 5)
 wordle.Jugar(grid, 6, 5)
